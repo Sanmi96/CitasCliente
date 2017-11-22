@@ -29,10 +29,10 @@
 		</table>
 		<p align="center"><font color="red"><c:out value="${error}"/></font></p>
 		<div style="margin: 0 auto; text-align: center; margin-top:20px">
-			<button action="llistar_clientes"><img src="resources/cancel.png" alt=""></button>
+			<button title="Cancelar" action="llistar_clientes"><img src="resources/cancel.png" alt=""></button>
 			<input type="hidden" value="<c:out value="${id}" />" name="id" /> 
 			<input type="hidden" value="<c:out value="${cliente_id}" />" name="cliente_id" />
-			<button type="submit" value="Modificar" name="modificar_cita"><img src="resources/tick.png" alt=""></button>
+			<button title="Modificar cita" type="submit" value="Modificar" name="modificar_cita"><img src="resources/tick.png" alt=""></button>
 		</div>
 	</form>
 </body>

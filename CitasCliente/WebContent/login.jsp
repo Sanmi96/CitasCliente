@@ -10,12 +10,12 @@
 <link href="style2.css" rel="stylesheet" type="text/css">
 </head>
 <body>	
-		<form action="login" method="post"> 
+		<form action="login" method="post">  
 			
 			<table style="width:400px;" cellpadding="3pt"> 
 				<tr>
 					<td class = "data">Usuario: </td> 	
-					<td class = "login"><input style="width:100%;" type="text" name="nombre"/></td>		
+					<td class = "login"><input style="width:100%;" type="text" name="nombre" autofocus/></td>		
 				</tr>
 				<tr>
 					<td class = "data">Contraseña: </td> 
@@ -25,8 +25,9 @@
 			<p align="center"><font color="red"><c:out value="${error}"/></font></p>
 				
 			<div style="margin: 0 auto; text-align: center; margin-top:20px">
-				<button type="submit" value="submit"><img src="resources/login.png" alt=""></button>
+				<button title="Autenticarse" type="submit" value="submit"><img src="resources/login.png" alt=""></button>
 			</div>
 		</form>
+		
 </body>
 </html>

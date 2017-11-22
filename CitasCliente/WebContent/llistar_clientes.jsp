@@ -19,7 +19,7 @@
 
 <body>
 	<% if (!Controlador.isLogin()){response.sendRedirect("login.jsp");} %>	
-	<form action="logout"><p align="right"><button type="submit"><img src="resources/logout.png" alt=""></button></p> </form>
+	<form action="logout"><p align="right"><button title="Cerrar sesión" type="submit"><img src="resources/logout.png" alt=""></button></p> </form>
 	<h1 align="center">Clientes</h1>
 	<form action="crear_cliente" method="get">
 		<table class="buscar">
@@ -40,7 +40,7 @@
 		</table>
 		<p align="center"><font color="red"><c:out value="${error}"/></font></p>
 		<div style="margin: 0 auto; text-align: center; margin-bottom: 50px;">
-			<button type="submit" value="Crear" name=crear_button ><img src="resources/add32.png" alt=""></button> <button type="submit"
+			<button title="Crear cliente" type="submit" value="Crear" name=crear_button ><img src="resources/add32.png" alt=""></button> <button title="Buscar clientes" type="submit"
 				formaction="llistar_clientes" name="buscar_button" value="Buscar" ><img src="resources/search.png" alt=""></button>
 		</div>
 	</form>
@@ -64,7 +64,7 @@
 			<table class="clientes">
 				<tbody>
 					<tr>
-						<td class="boto"><button
+						<td class="boto"><button title="Ver citas"
 								id="citesBut<c:out value="${loop.count}"/>"
 								onclick="showDiv(<c:out value="${loop.count}"/>,<c:out value="${cliente.id}"/>);" /><img src="resources/arrow-closed.png" alt=""></td>
 						<td class="nom"><c:out value="${cliente.nombre}" /></td>
@@ -77,14 +77,14 @@
 								<input type="hidden" value="<c:out value="${cliente.nombre}" />" name="nombre" />
 								<input type="hidden" value="<c:out value="${cliente.primer_apellido}" />" name="primer_apellido" />
 								<input type="hidden" value="<c:out value="${cliente.segundo_apellido}" />" name="segundo_apellido" /> 
-								<button type="submit" value="modificar cliente" name="modificar_cliente"><img src="resources/edit.png" alt=""></button>
+								<button title="Modificar datos" type="submit" value="modificar cliente" name="modificar_cliente"><img src="resources/edit.png" alt=""></button>
 															
 							</form>
 						</td>
 						<td class="migboto"> 
 						<form action="esborrar" method="post">							
 								<input type="hidden" value="<c:out value="${cliente.id}" />" 
-									name="id" /> <button type="submit" value="borrar cliente"
+									name="id" /> <button title="Borrar cliente" type="submit" value="borrar cliente"
 									onclick="return confirm('Seguro que quieres dar de baja ese cliente?\n<c:out value="${cliente.nombre}" /> <c:out value="${cliente.primer_apellido}" /> <c:out value="${cliente.segundo_apellido}" />');" ><img src="resources/trash.png" alt=""></button>
 						</form>	 
 						</td>
@@ -96,14 +96,14 @@
 				<table class="cites">
 					<thead>
 						<tr>
-							<td class="data" style="text-align: center;"><b>Data</b></td>
+							<td class="data" style="text-align: center;"><b>Fecha</b></td>
 							<td class="nota" style="text-align: center;"><b>Nota</b></td>
 							<td class="boto">
 								<form action="crear_cita" method ="get">
 									<input type="hidden" value="<c:out value="${cliente.id}" />"
 									name="cliente_id" />
 									<input type="hidden" value="<c:out value="${cliente.nombre}" /> <c:out value="${cliente.primer_apellido}" /> <c:out value="${cliente.segundo_apellido}" />" name="nombre"/>
-									<button type="submit" name="crear_button" value="nueva cita"><img src="resources/add.png" alt=""></button>
+									<button title="Nueva cita" type="submit" name="crear_button" value="nueva cita"><img src="resources/add.png" alt=""></button>
 								</form>
 							</td>
 						</tr>
@@ -120,13 +120,13 @@
 										<input type="hidden" value="<c:out value="${cita.cliente_id}" />" name="cliente_id" />
 										<input type="hidden" value="<c:out value="${cita.nota}" />" name="nota" />
 										<input type="hidden" value="<c:out value="${cita.data}" />" name="data" />
-										<button type="submit" value="modificar cita" name="modificar_cita"><img src="resources/edit.png" alt=""></button>									
+										<button title="Modificar datos" type="submit" value="modificar cita" name="modificar_cita"><img src="resources/edit.png" alt=""></button>									
 									</form>
 								</div>
 								<div class="floating-box">
 									<form action="esborrar" method="POST">
 										<input type="hidden" value="<c:out value="${cita.id}"/>" name="id"/>
-										<button type="submit" value="borrar cita" name="borrar_cita" onclick="return confirm('Seguro que quieres borrar esa cita?\n<c:out value="${cita.nota}" />');"><img src="resources/trash.png" alt=""></button>
+										<button title="Borrar cita" type="submit" value="borrar cita" name="borrar_cita" onclick="return confirm('Seguro que quieres borrar esa cita?\n<c:out value="${cita.nota}" />');"><img src="resources/trash.png" alt=""></button>
 									</form>
 								</div> 
 								</td>

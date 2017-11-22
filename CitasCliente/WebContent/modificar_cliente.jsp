@@ -34,8 +34,8 @@
 		<p align="center"><font color="red"><c:out value="${error}"/></font></p>
 		<div style="margin: 0 auto; text-align: center; margin-top:20px">				
 				<input type="hidden" value="<c:out value="${id}" />" name="id" />
-				<button type="submit" value="Cancelar"><img src="resources/cancel.png" alt=""></button>
-				<button type="submit" value="Modificar" name="modificar_cliente"><img src="resources/tick.png" alt=""></button>								
+				<button title="Cancelar" type="submit" value="Cancelar"><img src="resources/cancel.png" alt=""></button>
+				<button title="Modificar cliente" type="submit" value="Modificar" name="modificar_cliente"><img src="resources/tick.png" alt=""></button>								
 			
 		</div>
 	</form>

@@ -35,10 +35,10 @@
 		</table>
 		<p align="center"><font color="red"><c:out value="${error}"/></font></p>
 		<div style="margin: 0 auto; text-align: center; margin-top:20px">
-			<button type="submit" value="Cancelar"><img src="resources/cancel.png" alt=""></button>
+			<button title="Cancelar" type="submit" value="Cancelar"><img src="resources/cancel.png" alt=""></button>
 			<input type="hidden" value="<c:out value="${cliente_id}" />" name="cliente_id" />
 			<input type="hidden" value="<c:out value="${nombre}" />" name="nombre"/>
-			<button type="submit" value="Crear" name="crear_btn" ><img src="resources/tick.png" alt=""></button>
+			<button title="Crear cita" type="submit" value="Crear" name="crear_btn" ><img src="resources/tick.png" alt=""></button>
 		</div>
 	</form>
 	

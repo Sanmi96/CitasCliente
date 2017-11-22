@@ -83,7 +83,7 @@ public abstract class AbstractDao {
             }
             queryStr = queryStr.substring(0, queryStr.length() - 1) + ")";
             objects = session.createCriteria(clazz.getName()).add(Restrictions.sqlRestriction(queryStr))
-                    .addOrder(Order.asc("data")).list();
+                    .addOrder(Order.desc("data")).list();
             tx.commit();
         } catch (HibernateException e) {
             handleException(e);
@@ -100,7 +100,7 @@ public abstract class AbstractDao {
             Query query = session.createQuery("from " + clazz.getName());
             objects = session.createCriteria(clazz.getName()).add(Restrictions.like("nombre", "%" + nombre + "%"))
                     .add(Restrictions.like("primer_apellido", "%" + primer_apellido + "%"))
-                    .add(Restrictions.like("segundo_apellido", "%" + segundo_apellido + "%")).list();
+                    .add(Restrictions.like("segundo_apellido", "%" + segundo_apellido + "%")).addOrder(Order.asc("nombre")).addOrder(Order.asc("primer_apellido")).addOrder(Order.asc("segundo_apellido")).list();
             tx.commit();
         } catch (HibernateException e) {
             handleException(e);
