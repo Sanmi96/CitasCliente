@@ -33,9 +33,11 @@ public class CrearCitaServlet extends HttpServlet {
                 request.setAttribute("data", data);
                 request.setAttribute("nombre", request.getParameter("nombre"));
                 if (nota.equals("") || data.equals("")) {
+                    request.setAttribute("nota", nota);
                     request.setAttribute("error", "Campos vacíos");
                     request.getRequestDispatcher("crear_cita.jsp").forward(request, response);
                 } else if (!validador.isNotaValid(nota)) {
+                    request.setAttribute("nota", nota);
                     request.setAttribute("error", "Carácteres inválidos");
                     request.getRequestDispatcher("crear_cita.jsp").forward(request, response);
                 } else {

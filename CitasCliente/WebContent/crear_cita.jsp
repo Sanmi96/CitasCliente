@@ -26,7 +26,7 @@
 		<table cellpadding="3pt" class="crear">
 			<tr>
 				<td class="data">Nota:</td>
-				<td><textarea rows="10" style="width:100%;" name="nota" form="crearcita"></textarea></td>
+				<td><textarea rows="10" style="width:100%;" name="nota" form="crearcita"><c:out value="${nota}" /></textarea></td>
 			</tr>
 			<tr>
 				<td class="data">Data:</td>

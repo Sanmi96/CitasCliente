@@ -40,6 +40,11 @@
         <servlet-class>com.sanmi.citasClientes.hibernate.controller.LlistarClientsServlet</servlet-class>
     </servlet>
     <servlet>
+        <display-name>Llistar Citas</display-name>
+        <servlet-name>llistar_citas</servlet-name>
+        <servlet-class>com.sanmi.citasClientes.hibernate.controller.LlistarCitesServlet</servlet-class>
+    </servlet>
+    <servlet>
         <display-name>Modificars</display-name>
         <servlet-name>modificar</servlet-name>
         <servlet-class>com.sanmi.citasClientes.hibernate.controller.ModificarServlet</servlet-class>
@@ -68,6 +73,10 @@
     <servlet-mapping>
     	<servlet-name>llistar_clientes</servlet-name>
     	<url-pattern>/llistar_clientes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>llistar_citas</servlet-name>
+    	<url-pattern>/llistar_citas</url-pattern>
     </servlet-mapping>
     
     <servlet-mapping>

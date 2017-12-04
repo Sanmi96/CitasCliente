@@ -1,5 +1,7 @@
 package com.sanmi.citasClientes.hibernate.bean;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Cita {
@@ -7,8 +9,9 @@ public class Cita {
     int id;
     int cliente_id;
     Date data;
-    String dataStr;
+    String dataStr = "HOLA";
     String nota;
+    DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
 
     public Cita() {
         super();
@@ -27,6 +30,7 @@ public class Cita {
         this.cliente_id = cliente_id;
         this.data = data;
         this.nota = nota;
+        
     }
 
     public int getId() {
@@ -56,9 +60,17 @@ public class Cita {
     public String getNota() {
         return nota;
     }
+    
+    public String getDataStr() {
+	return dataStr;
+    }
 
     public void setNota(String nota) {
         this.nota = nota;
+    }
+    
+    public void setDataStr() {
+	this.dataStr = df.format(data);
     }
 
 }

@@ -71,6 +71,22 @@ public abstract class AbstractDao {
         }
         return objects;
     }
+    
+    protected List findCitesOrderedByData(Class clazz, int id) {
+        List objects = null;
+        try {
+            startOperation();
+            Query query = session.createQuery("from " + clazz.getName());
+            objects = session.createCriteria(clazz.getName()).add(Restrictions.eq("cliente_id", id))
+                    .addOrder(Order.desc("data")).list();
+            tx.commit();
+        } catch (HibernateException e) {
+            handleException(e);
+        } finally {
+            session.close();
+        }        
+        return objects;
+    }
 
     protected List findAllCitesOrderedByData(Class clazz, String[] ids) {
         List objects = null;
@@ -89,7 +105,7 @@ public abstract class AbstractDao {
             handleException(e);
         } finally {
             session.close();
-        }
+        }        
         return objects;
     }
 

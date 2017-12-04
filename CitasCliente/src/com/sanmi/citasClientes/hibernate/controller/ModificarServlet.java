@@ -46,7 +46,7 @@ public class ModificarServlet extends HttpServlet {
                 boolean repetit = false;
                 for (Cliente c : Controlador.listClientes()) {
                     if (nombre.equals(c.getNombre()) && primer_apellido.equals(c.getPrimer_apellido())
-                            && segundo_apellido.equals(c.getSegundo_apellido())) {
+                            && segundo_apellido.equals(c.getSegundo_apellido()) && !id.equals(Integer.toString(c.getId()))) {
                         repetit = true;
                     }
                 }

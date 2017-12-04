@@ -25,6 +25,10 @@ public class Controlador {
     public static List<Cliente> listClientes() {
         return clienteDAO.findAll();
     }
+    
+    public static List<Cita> findCitesOrderedByData(int i) {
+        return citaDAO.findCitesOrderedByData(i);
+    }
 
     public static List<Cita> findAllCitesOrderedByData(String[] s) {
         return citaDAO.findAllCitesOrderedByData(s);

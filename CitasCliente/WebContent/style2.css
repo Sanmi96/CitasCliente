@@ -204,6 +204,10 @@ table.cites {
 	margin-bottom: 25px;
 }
 
+table.citeshead {
+	width: 70%;
+}
+
 table.clientes {
 	width: 80%;
 }

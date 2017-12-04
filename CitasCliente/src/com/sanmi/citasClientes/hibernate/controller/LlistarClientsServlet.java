@@ -39,31 +39,15 @@ public class LlistarClientsServlet extends HttpServlet {
                 request.setAttribute("error", "");
 
                 List<Cliente> clientes = Controlador.findAllClientsByName(nombre, primer_apellido, segundo_apellido);
-                if (!clientes.isEmpty()) {
-                    String[] ids = new String[clientes.size()];
-                    for (int i = 0; i < clientes.size(); i++) {
-                        ids[i] = Integer.toString(clientes.get(i).getId());
-                    }
-                    // Selecciona només les dels clients que toca
-                    List<Cita> cites = Controlador.findAllCitesOrderedByData(ids);
-                    // Assigna les cites a cada client
-                    for (int i = 0; i < clientes.size(); i++) {
-                        clientes.get(i).deleteCites();
-                        for (int y = 0; y < cites.size(); y++) {
-
-                            if (clientes.get(i).getId() == cites.get(y).getCliente_id()) {
-                                clientes.get(i).addCita(cites.get(y));
-                            }
-                        }
-                    }
-                }
+                
 
                 request.setAttribute("clientes", clientes);
             }
-
+            
             request.getRequestDispatcher("llistar_clientes.jsp").forward(request, response);
         } else {
             response.sendRedirect("login.jsp");
         }
+        
     }
 }

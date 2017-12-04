@@ -55,6 +55,11 @@ public class CitaDAO extends AbstractDao {
     public List findAll() throws DataAccessLayerException {
         return super.findAll(Cita.class);
     }
+    
+    public List findCitesOrderedByData(int i) {
+        return super.findCitesOrderedByData(Cita.class, i);
+    }
+
 
     public List findAllCitesOrderedByData(String[] s) {
         return super.findAllCitesOrderedByData(Cita.class, s);
