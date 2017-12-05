@@ -95,7 +95,7 @@
 						<form action="esborrar" method="post">							
 								<input type="hidden" value="<c:out value="${cliente.id}" />" 
 									name="id" /> <button title="Borrar cliente" type="submit" value="borrar cliente"
-									onclick="return confirm('Seguro que quieres dar de baja ese cliente?\n<c:out value="${cliente.nombre}" /> <c:out value="${cliente.primer_apellido}" /> <c:out value="${cliente.segundo_apellido}" />'); clearSession();" ><img src="resources/trash.png" alt=""></button>
+									onclick=" clearSession(); return confirm('Seguro que quieres dar de baja ese cliente?\n<c:out value="${cliente.nombre}" /> <c:out value="${cliente.primer_apellido}" /> <c:out value="${cliente.segundo_apellido}" />');" ><img src="resources/trash.png" alt=""></button>
 						</form>	 
 						</td>
 					</tr>

@@ -9,7 +9,7 @@ public class Cita {
     int id;
     int cliente_id;
     Date data;
-    String dataStr = "HOLA";
+    String dataStr = "";
     String nota;
     DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
 
